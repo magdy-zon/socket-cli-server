@@ -14,7 +14,6 @@ async function execSocketClient() {
 
   
   socket.on('connect', () => {
-    console.log(socket);
     console.log('-----')
   })
 
@@ -37,7 +36,7 @@ async function execSocketClient() {
     console.log('joined');
   });
 
-  // setTimeout(saludos, 3000, "Nathan", "Programador");
+  setTimeout(() => {console.log('timeout')}, 3000)
 
   await socket.emit('calendarVisit-notification', {
     nameRoom: `Room-26-05-2023-5dcf5e5b4a706746d5df0341`,
@@ -46,8 +45,6 @@ async function execSocketClient() {
         datetime: '2022-12-01T18:00:00.000Z',
         idBroker: '5dcf5e5b4a706746d5df0341'
     },
-  }, () => {
-    console.log('schedule update event successfull');
   }); 
 }
 
